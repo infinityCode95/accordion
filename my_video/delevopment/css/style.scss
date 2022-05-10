@@ -1,0 +1,136 @@
+@import "_null.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+body {
+    color: black;
+    background-color: white;
+	line-height: 1;
+	font-family: "Open sans";
+    font-size: 16px;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+[class*="__container"] {
+	max-width: 1300px;
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+
+
+// !========================================================== STYLE ==============================================================
+
+
+.wrapper {
+}
+
+.content {
+
+		min-height: 745px;
+		position: relative;
+		
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.7);
+			z-index: -1;
+		}
+
+		// .content__video-wrapper
+
+		&__video-wrapper {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -2;		  
+		}
+
+		// .content__title
+
+		&__title {
+			margin: 40px 0px 0px 70px;
+			color: white;
+			font-size: 55px;
+			font-weight: 600;
+		}
+
+		// .content__btn
+
+		&__btn {
+		}
+}
+
+.btn {
+
+	// .btn__switch
+
+	&__switch {
+		position: absolute;
+		bottom: 7%;
+		left: 45%;
+		width: 120px;
+		height: 60px;
+		display: flex;
+		border-radius: 100px;
+		align-items: center;
+		justify-content: space-around;
+		border: none;
+		background-color: #bfbfbf;
+	}
+
+	&__play,
+	&__pause {
+		display: inline-block;
+		font-size: 25px;
+		font-weight: 600;
+		cursor: pointer;
+		text-transform: capitalize;
+	}
+	
+	// .btn__play
+
+	&__play {
+	}	
+
+	// .btn__pause
+
+	&__pause {
+	}	
+
+	// .btn__span
+
+	&__span {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: white;
+		border-radius: 50%;
+		margin: 0;
+		display: block;
+		transition: all 0.7s ease 0s;
+	}
+	
+	.slide &__span  {
+		left: 50%;
+		transition: all 0.7s ease 0s;	
+	}
+
+}
