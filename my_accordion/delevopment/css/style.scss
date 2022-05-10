@@ -1,0 +1,145 @@
+@import "_null.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400&display=swap');
+
+
+body {
+    color: black;
+    background-color: #e5e1e1;
+	line-height: 1;
+	font-family: "Open sans";
+    font-size: 16px;
+}
+
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+// ! Контейнер
+
+[class*="__container"] {
+	max-width: 1300px;
+	margin: 0px auto;
+	padding: 0px 15px;
+}
+
+
+// !========================================================== STYLE ==============================================================
+
+
+.main {
+
+	// .main__container
+
+	&__container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 750px;
+	}
+}
+
+.accordion {
+
+	max-width: 700px;
+
+	// .accordion__item
+
+	&__item {
+		width: 100%;
+		position: relative;
+		// border-bottom: 1px solid white;
+		
+		
+		&:not(:first-child) {
+			margin: 8px 0px 0px 0px;
+		}
+
+		&.item__active .accordion__item-text {
+			height: 200px;
+			padding: 20px;
+		}
+		
+		&.item__active .accordion__item-title::before {
+			content: '';
+			transform: scale(0);
+			transition: all 0.5s ease 0s;	
+		}
+
+		&.item__active .accordion__item-title::after {
+			content: '';
+			transform: rotate(-180deg);
+			transition: all 0.5s ease 0s;	
+		}
+		
+	}
+
+	// .accordion__item-title
+
+	&__item-title {
+		padding: 10px;
+		background-color: #2b2a2a;
+		color: white;
+		cursor: pointer;
+		position: relative;
+		border-radius: 10px;
+
+		
+		&::after {
+			content: '';
+			position: absolute;
+			width: 15px;
+			height: 2px;
+			background: white;
+			top: 50%;
+			transform: translate(0, -50%);
+			right: 20px;
+			font-size: 27px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 15px;
+			height: 2px;
+			background: white;
+			top: 50%;
+			transform: translate(0, -50%);
+			transform: rotate(-90deg);
+			right: 20px;
+			font-size: 27px;
+		}
+
+		
+	}
+
+	// .accordion__item-text
+
+	&__item-text {
+		position: relative;
+		background-color: #b4a1cc;
+		height: 0;
+		overflow: hidden;
+		transition: all 1s ease 0s;
+		max-width: 800px;
+		border-radius: 10px;
+		margin: 5px 0px 0px 0px;
+
+	}
+
+	// .accordion__item-span
+
+	&__item-span {
+		font-size: 30px;
+		display: block;
+		margin: 0px 0px 20px 0px;
+
+	}	
+}
